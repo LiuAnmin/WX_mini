@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "旅游足迹",
+  "usingComponents": {
+    "ec-canvas": "../../dist/ec-canvas/ec-canvas"
+  }
+}

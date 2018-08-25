@@ -1,0 +1,11 @@
+<!--pages/new/index.wxml-->
+<import src="article.wxml"/>
+<text>\n数据来源：网页新闻API\nhttps://c.m.163.com/nc/article/headline/T1348647853363/0-20.html</text>
+<view class="articles" wx:if="{{ articles[0].postid }}">
+  <block wx:for="{{ articles }}" wx:key="id">
+    <template is="newsStyle0" data="{{ ...item }}" />
+  </block>
+</view>
+<view wx:else>
+    <text>{{ articles.titles }}</text>
+</view>

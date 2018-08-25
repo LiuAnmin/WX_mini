@@ -1,0 +1,20 @@
+<!--pages/new/index.wxml-->
+<import src="../../dist/wxParse/wxParse.wxml"/>
+<view class="page__detail">
+    <view class="detail">
+        <view class="detail__title">
+            {{ article.title }}
+        </view>
+        <view class="article__desc">
+        <text class="article__source" wx:if="{{ article.source }}">{{ article.source }}</text>
+            <text class="article__time">{{ article.ptime }}</text>
+            <view class="article__count">
+                <text>{{ article.replyCount }} reply</text>
+            </view>
+        </view>
+
+        <view class="article__content wxParse">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        </view>
+    </view>
+</view>

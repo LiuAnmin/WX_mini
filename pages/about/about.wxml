@@ -1,0 +1,31 @@
+<!--pages/about/about.wxml-->
+<view>
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl || '/assets/icon/about.png'}}" background-size="cover" />
+</view>
+
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">显示你的微信图像</button>
+<text>\n\n</text>
+
+<wux-cell title="请打分" hover-class="none">
+  <view slot="footer">
+    <wux-rater auto="{{ false }}" value="{{ value }}" bind:change="onChange" allow-half default-value="{{ 5 }}" />
+    <text class="wux-rater__text">{{ value }}</text>
+  </view>
+</wux-cell>
+
+<wux-cell title="当前得分" hover-class="none">
+  <view slot="footer">
+    <text class="wux-rater__text">{{ average }}</text>
+  </view>
+</wux-cell>
+<text>\n\n</text>
+
+<view class="item-title">作者</view>
+<view class="zan-panel">
+  <view class="item-detail">liuanmin2003@hotmail.com</view>
+</view>
+
+<view class="item-title">GitHub</view>
+<view class="zan-panel">
+  <view class="item-detail">https://github.com/LiuAnmin/wx_mini</view>
+</view>

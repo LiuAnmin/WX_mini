@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "常用工具",
+  "usingComponents": {
+    "wux-vcode": "../../dist/vcode/index"
+  }
+}

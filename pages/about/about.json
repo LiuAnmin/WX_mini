@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "反馈",
+  "usingComponents": {
+    "wux-cell": "../../dist/cell/index",
+    "wux-rater": "../../dist/rater/index"
+  }
+}

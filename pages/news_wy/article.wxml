@@ -1,0 +1,28 @@
+<!--新闻列表页面模板-->
+<!--
+id:news.news_id,
+title:news.news_title,
+data:news.news_date,
+parise:news.news_praise_count,
+commont:news.news_comment_count,
+summary:news.news_summary,
+icons:news.news_icon,
+style:news.news_style
+-->
+
+<!--无图模式-->
+<template name="newsStyle0">
+    <navigator url="detail?id={{ postid }}">
+        <view class="article__item">
+            <view class="article__info">
+                <view class="article__title article__title__large">{{ title }}</view>
+                <view class="article__desc">
+                    <text class="article__time">{{ ptime }}</text>
+                    <view class="article__count">
+                    <text>reply:{{ replyCount }}</text>
+                </view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</template>

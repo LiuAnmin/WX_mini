@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/tour/city",
+    "pages/tools/tools",
+    "pages/news_wy/index",
+    "pages/news_wy/detail",
+    "pages/news_zh/index",
+    "pages/news_zh/detail",
+    "pages/about/about"
+  ],
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#FF6600",
+    "list": [
+      {
+        "pagePath": "pages/tour/city",
+        "text": "旅游足迹",
+        "iconPath": "assets/icon/map.png",
+        "selectedIconPath": "assets/icon/map-a.png"
+      },
+      {
+        "pagePath": "pages/tools/tools",
+        "text": "常用工具",
+        "iconPath": "assets/icon/tools.png",
+        "selectedIconPath": "assets/icon/tools-a.png"
+      },
+      {
+        "pagePath": "pages/news_wy/index",
+        "text": "网易新闻",
+        "iconPath": "assets/icon/news1.png",
+        "selectedIconPath": "assets/icon/news1-a.png"
+      },
+      {
+        "pagePath": "pages/news_zh/index",
+        "text": "知乎新闻",
+        "iconPath": "assets/icon/news2.png",
+        "selectedIconPath": "assets/icon/news2-a.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "联系反馈",
+        "iconPath": "assets/icon/about.png",
+        "selectedIconPath": "assets/icon/about-a.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+
+  "debug": true
+}

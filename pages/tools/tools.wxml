@@ -1,0 +1,94 @@
+<!--pages/tools/tools.wxml-->
+<text>本页面有四种小工具\n</text>
+<text>1 本地天气\n</text>
+<text>2 公农日历\n</text>
+<text>3 验证码生成器\n</text>
+<text>4 二维码生成器\n</text>
+
+<text>\n\n1 本地天气</text>
+<view class="container-weather">
+  <view>
+    <button bindtap="getweather" loading="{{myloading}}">刷新</button>
+  <view style="flex-direction:row;">
+    <text>现在：{{weather_now.hot}}度，{{weather_now.weather}}，{{weather_now.wind_type}}{{weather_now.wind_degree}}级</text>
+  </view>
+  <text>全天：白天{{weather_day.day}}，夜间{{weather_day.night}}，最低{{weather_day.min}}度，最高{{weather_day.max}}度</text>
+  <view>
+    <text>穿衣：{{weather_tip.dress}}</text>
+    <text>\n空气：{{weather_tip.air}}</text>
+    <text>\n数据来源：和风天气\nhttps://www.heweather.com/</text>
+  </view> 
+  </view> 
+</view>
+
+<text>\n\n2 公农日历</text>
+<view class="calendar-navbar">
+  <view class="calendar-navbar-button" bindtap="goToday" hover="true" hover-class="view-hover">今日</view>
+  <view class="calendar-navbar-button" bindtap="goLastMonth" hover="true" hover-class="view-hover">{{"<"}}</view>
+        <view class="calendar-navbar-date ">{{dateData.date}}</view>
+        <view class="calendar-navbar-button " bindtap="goNextMonth " hover="true " hover-class="view-hover ">{{">"}}</view>
+  <picker class="calendar-navbar-button" mode="date" start="1900-01-01" end="2100-01-01" bindchange="bindDateChange">
+    <view hover="true" hover-class="view-hover">跳转</view>
+  </picker>
+</view>
+<view class="calendar-head">
+  <view wx:for="一二三四五六日" wx:key="*this">{{item}}</view>
+</view>
+<view class="calendar-body">
+  <view class="calendar-body-rows" wx:for="123456" wx:for-index="row" wx:key="*this">
+    <view class="calendar-body-cols" wx:for="1234567" wx:for-index="col" wx:key="*this">
+      <view class="calendar-body-item" hover="true" hover-class="view-hover" data-day-index="{{row * 7 + col}}" bindtap="selectDay">
+        <view hidden="{{!dateData.arrIsShow[row * 7 + col]}}">
+          <view class="calendar-body-day">
+            {{dateData.arrDays[row * 7 + col]}}
+          </view>
+          <view class="calendar-body-dayex">
+            {{dateData.arrInfoExShow[row * 7 + col]}}
+          </view>
+          <view class="calendar-body-workturn" style="color:{{workTurnData.arrWorkTurn[row * 7 + col] === '休' ? '#09BB07' : '#e64340'}}" hidden="{{!isWorkTurn}}">
+            {{workTurnData.arrWorkTurn[row * 7 + col]}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="calendar-detail">
+  <view class="calendar-detail-day">{{detailData.curDay}}</view>
+  <view class="calendar-detail-info1">{{detailData.curInfo1}}</view>
+  <view class="calendar-detail-info2">{{detailData.curInfo2}}</view>
+</view>
+
+<text>\n\n</text>
+<view class="weui-cell weui-cell_input weui-cell_vcode">
+  <view class="weui-cell__hd">
+    <view class="weui-label">3 验证码生成器</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" placeholder="请输入验证码" bindblur="userNameInput" />
+  </view>
+  <view class="weui-cell__ft" style="text-align: left">
+    <wux-vcode bind:change="onChange" />
+  </view>
+  <text>验证码是：{{trueCode}}\n点击图片可更新</text>
+</view>
+
+<text>\n\n4 二维码生成器</text>
+<view class="page__bd">
+  <view class="weui-cells__title">请在下面输入文字(即输即成):</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea value="{{ value }}" bindinput="bindinput" class="weui-textarea" placeholder="支持文本、网址和电子邮箱" style="height: 4.2em" maxlength="300" />
+        <view class="weui-textarea-counter">{{ value.length }}/300</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__tips">提示：点击图片即可保存</view>
+
+  <canvas bindtap="previewImg" canvas-id="mycanvas" class="qrcode" color="{{ fgColor }}" style="width: 300px; height: 300px;" />
+</view>
+
+
+
+

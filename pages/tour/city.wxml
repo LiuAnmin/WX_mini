@@ -1,0 +1,15 @@
+<!--pages/city/city.wxml-->
+<view class="buttom">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <button bindtap="onSelect">选城市</button>
+  </picker>
+  <view>
+    <text>{{MSG}}：{{multiArray[0][multiIndex[0]]}}（省）{{multiArray[1][multiIndex[1]]}}（市）</text>
+  </view>
+  <text>已选择{{noProvince}}个省中的{{count}}个城市</text>
+  <button bindtap="onClear">清空</button>
+  <button bindtap="onShowmap">显示地图</button>
+</view>
+<view class="container">
+<ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
